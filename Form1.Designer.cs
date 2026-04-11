@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Label label8;
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,17 +45,23 @@
             this.label7 = new System.Windows.Forms.Label();
             this.Registerbtn = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.browsebutton = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             label8 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // label8
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(574, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            label8.AutoSize = true;
+            label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label8.Location = new System.Drawing.Point(12, 298);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(156, 20);
+            label8.TabIndex = 18;
+            label8.Text = "Program to apply *";
             // 
             // label2
             // 
@@ -135,7 +140,7 @@
             // 
             this.malebtn.AutoSize = true;
             this.malebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.malebtn.Location = new System.Drawing.Point(93, 201);
+            this.malebtn.Location = new System.Drawing.Point(3, 8);
             this.malebtn.Name = "malebtn";
             this.malebtn.Size = new System.Drawing.Size(62, 22);
             this.malebtn.TabIndex = 9;
@@ -147,13 +152,14 @@
             // 
             this.femalebtn.AutoSize = true;
             this.femalebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.femalebtn.Location = new System.Drawing.Point(161, 201);
+            this.femalebtn.Location = new System.Drawing.Point(65, 7);
             this.femalebtn.Name = "femalebtn";
             this.femalebtn.Size = new System.Drawing.Size(86, 24);
             this.femalebtn.TabIndex = 10;
             this.femalebtn.TabStop = true;
             this.femalebtn.Text = "Female";
             this.femalebtn.UseVisualStyleBackColor = true;
+            this.femalebtn.CheckedChanged += new System.EventHandler(this.femalebtn_CheckedChanged);
             // 
             // daybox
             // 
@@ -201,19 +207,6 @@
             // 
             this.monthbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.monthbox.FormattingEnabled = true;
-            this.monthbox.Items.AddRange(new object[] {
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"});
             this.monthbox.Location = new System.Drawing.Point(106, 256);
             this.monthbox.Name = "monthbox";
             this.monthbox.Size = new System.Drawing.Size(72, 24);
@@ -386,26 +379,49 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(12, 321);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(239, 28);
+            this.comboBox1.Size = new System.Drawing.Size(346, 28);
             this.comboBox1.TabIndex = 17;
             this.comboBox1.Text = "-Select program-";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // label8
+            // pictureBox1
             // 
-            label8.AutoSize = true;
-            label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label8.Location = new System.Drawing.Point(12, 298);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(156, 20);
-            label8.TabIndex = 18;
-            label8.Text = "Program to apply *";
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(329, 50);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(138, 136);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
+            // browsebutton
+            // 
+            this.browsebutton.Location = new System.Drawing.Point(350, 192);
+            this.browsebutton.Name = "browsebutton";
+            this.browsebutton.Size = new System.Drawing.Size(95, 23);
+            this.browsebutton.TabIndex = 20;
+            this.browsebutton.Text = "Browse";
+            this.browsebutton.UseVisualStyleBackColor = true;
+            this.browsebutton.Click += new System.EventHandler(this.browsebutton_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.malebtn);
+            this.groupBox1.Controls.Add(this.femalebtn);
+            this.groupBox1.Location = new System.Drawing.Point(93, 188);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(157, 31);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 450);
+            this.ClientSize = new System.Drawing.Size(479, 450);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.browsebutton);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(label8);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Registerbtn);
@@ -413,8 +429,6 @@
             this.Controls.Add(this.yearbox);
             this.Controls.Add(this.monthbox);
             this.Controls.Add(this.daybox);
-            this.Controls.Add(this.femalebtn);
-            this.Controls.Add(this.malebtn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.middlenamebox);
             this.Controls.Add(this.firstnamebox);
@@ -423,18 +437,18 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -451,6 +465,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button Registerbtn;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button browsebutton;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

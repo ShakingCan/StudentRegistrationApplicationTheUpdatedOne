@@ -18,15 +18,15 @@ namespace StudentRegistrationApplication
             InitializeComponent();
 
         }
-        
+
 
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
-        
-        
+
+
 
         private void Registerbtn_Click(object sender, EventArgs e)
         {
@@ -45,10 +45,32 @@ namespace StudentRegistrationApplication
             }
             String birthday = daybox.Text + "/" + monthbox.Text + "/" + yearbox.Text;
 
-            MessageBox.Show("Name: " + ln + ", " + fn + " " + mn + "\nGender: " + gender + "\nBirthday: " + birthday+ "\nProgram"+ c);
+           
 
+
+
+
+
+            showresult(fn, ln, c);
+            showresult(fn, mn,  ln, c);
+            showresult(fn, mn, ln,gender,birthday, c);
 
         }
+
+        public void showresult(String firstname, String lastname, String course)
+        {
+            MessageBox.Show("Name: " + firstname + " " + lastname + "\n" + course); 
+        }
+        public void showresult(String firstname, String middlename, String lastname, String course)
+        {
+            MessageBox.Show("Name: " + firstname + " "+ middlename+" " + lastname + "\n" + course);
+        }
+        public void showresult(String firstname, String middlename,String lastname,  String gender,String dateofbirth, String course)
+        {
+            MessageBox.Show("Name: " + firstname + " " + middlename + " " + lastname +"\nGender:"+gender+"\nDate of Birth:"+dateofbirth+ "\nCourse:" + course);
+        }
+
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -71,18 +93,18 @@ namespace StudentRegistrationApplication
                 comboBox1.Items.Add(cose);
             }
             ArrayList months = new ArrayList();
-months.Add("January");
-months.Add("February");
-months.Add("March");
-months.Add("April");
-months.Add("May");
-months.Add("June");
-months.Add("July");
-months.Add("August");
-months.Add("September");
-months.Add("October");
-months.Add("November");
-months.Add("December");
+            months.Add("January");
+            months.Add("February");
+            months.Add("March");
+            months.Add("April");
+            months.Add("May");
+            months.Add("June");
+            months.Add("July");
+            months.Add("August");
+            months.Add("September");
+            months.Add("October");
+            months.Add("November");
+            months.Add("December");
 foreach (String month in months)
 {
     monthbox.Items.Add(month);
@@ -90,9 +112,38 @@ foreach (String month in months)
          
 
 
-            
+
         }
 
-      
+       
+
+        private void browsebutton_Click(object sender, EventArgs e)
+        {
+          
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "Access Databases (*.mdb)|*.mdb|All Files (*.*)|*.*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var filePath = openFileDialog.FileName;
+                }
+
+                pictureBox1.ImageLocation = openFileDialog.FileName;
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+
+        }
+
+        private void femalebtn_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }
+
